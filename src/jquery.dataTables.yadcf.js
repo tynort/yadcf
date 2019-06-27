@@ -3328,7 +3328,7 @@ if (!Object.entries) {
 							if (columnObj.filter_type === 'custom_func' || columnObj.filter_type === 'multi_select_custom_func') {
 								custom_func_filter_value_holder = $('#yadcf-filter-' + table_selector_jq_friendly + '-' + column_number).val();
 							}
-							if (!columnObj.select_type_options || !columnObj.select_type_options.ajax) {
+							if ((!columnObj.select_type_options || !columnObj.select_type_options.ajax) && $filter_selector[0].selectedIndex<0)  {
 								$filter_selector.empty();
 								$filter_selector.append(column_data);
 								if (settingsDt.aoPreSearchCols[column_position].sSearch !== '') {
